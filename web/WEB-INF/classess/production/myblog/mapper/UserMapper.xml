@@ -5,7 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="isadministrator" jdbcType="BIT" property="isadministrator" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -37,7 +37,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, password, isadministrator
+    id, name, password, salt
   </sql>
   <select id="selectByExample" parameterType="com.caomingyu.blog.pojo.UserExample" resultMap="BaseResultMap">
     select
@@ -65,9 +65,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.caomingyu.blog.pojo.User" useGeneratedKeys="true">
-    insert into user (name, password, isadministrator
+    insert into user (name, password, salt
       )
-    values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{isadministrator,jdbcType=BIT}
+    values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.caomingyu.blog.pojo.User" useGeneratedKeys="true">
@@ -79,8 +79,8 @@
       <if test="password != null">
         password,
       </if>
-      <if test="isadministrator != null">
-        isadministrator,
+      <if test="salt != null">
+        salt,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -90,8 +90,8 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="isadministrator != null">
-        #{isadministrator,jdbcType=BIT},
+      <if test="salt != null">
+        #{salt,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -104,8 +104,8 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="isadministrator != null">
-        isadministrator = #{isadministrator,jdbcType=BIT},
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -114,7 +114,7 @@
     update user
     set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      isadministrator = #{isadministrator,jdbcType=BIT}
+      salt = #{salt,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -6,9 +6,17 @@ public class Article {
     private Integer id;
 
     private Integer uid;
-    private Category category;
+
     private Integer category_id;
     private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Category getCategory() {
         return category;
@@ -18,13 +26,7 @@ public class Article {
         this.category = category;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    private Category category;
 
     private String title;
 

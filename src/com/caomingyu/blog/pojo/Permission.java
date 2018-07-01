@@ -1,13 +1,13 @@
 package com.caomingyu.blog.pojo;
 
-public class User {
+public class Permission {
     private Integer id;
 
     private String name;
 
-    private String password;
+    private String desc_;
 
-    private String salt;
+    private String url;
 
     public Integer getId() {
         return id;
@@ -25,19 +25,19 @@ public class User {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getPassword() {
-        return password;
+    public String getDesc_() {
+        return desc_;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setDesc_(String desc_) {
+        this.desc_ = desc_ == null ? null : desc_.trim();
     }
 
-    public String getSalt() {
-        return salt;
+    public String getUrl() {
+        return url;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
     }
 }

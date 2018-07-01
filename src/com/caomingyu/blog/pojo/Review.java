@@ -5,14 +5,6 @@ import java.util.List;
 
 public class Review {
     private Integer id;
-
-    private Integer uid;
-
-    private Integer article_id;
-
-    private Date createdate;
-
-    private String context_;
     private List<Reply> replies;
 
     public List<Reply> getReplies() {
@@ -22,6 +14,14 @@ public class Review {
     public void setReplies(List<Reply> replies) {
         this.replies = replies;
     }
+
+    private Integer uid;
+
+    private Integer article_id;
+
+    private Date createdate;
+
+    private String context_;
 
     public Integer getId() {
         return id;

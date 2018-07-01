@@ -3,14 +3,14 @@ package com.caomingyu.blog.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserExample {
+public class RoleExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public UserExample() {
+    public RoleExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -234,143 +234,73 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNull() {
-            addCriterion("password is null");
+        public Criteria andDesc_IsNull() {
+            addCriterion("desc_ is null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNotNull() {
-            addCriterion("password is not null");
+        public Criteria andDesc_IsNotNull() {
+            addCriterion("desc_ is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordEqualTo(String value) {
-            addCriterion("password =", value, "password");
+        public Criteria andDesc_EqualTo(String value) {
+            addCriterion("desc_ =", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotEqualTo(String value) {
-            addCriterion("password <>", value, "password");
+        public Criteria andDesc_NotEqualTo(String value) {
+            addCriterion("desc_ <>", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThan(String value) {
-            addCriterion("password >", value, "password");
+        public Criteria andDesc_GreaterThan(String value) {
+            addCriterion("desc_ >", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
-            addCriterion("password >=", value, "password");
+        public Criteria andDesc_GreaterThanOrEqualTo(String value) {
+            addCriterion("desc_ >=", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThan(String value) {
-            addCriterion("password <", value, "password");
+        public Criteria andDesc_LessThan(String value) {
+            addCriterion("desc_ <", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThanOrEqualTo(String value) {
-            addCriterion("password <=", value, "password");
+        public Criteria andDesc_LessThanOrEqualTo(String value) {
+            addCriterion("desc_ <=", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLike(String value) {
-            addCriterion("password like", value, "password");
+        public Criteria andDesc_Like(String value) {
+            addCriterion("desc_ like", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotLike(String value) {
-            addCriterion("password not like", value, "password");
+        public Criteria andDesc_NotLike(String value) {
+            addCriterion("desc_ not like", value, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIn(List<String> values) {
-            addCriterion("password in", values, "password");
+        public Criteria andDesc_In(List<String> values) {
+            addCriterion("desc_ in", values, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotIn(List<String> values) {
-            addCriterion("password not in", values, "password");
+        public Criteria andDesc_NotIn(List<String> values) {
+            addCriterion("desc_ not in", values, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordBetween(String value1, String value2) {
-            addCriterion("password between", value1, value2, "password");
+        public Criteria andDesc_Between(String value1, String value2) {
+            addCriterion("desc_ between", value1, value2, "desc_");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotBetween(String value1, String value2) {
-            addCriterion("password not between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltIsNull() {
-            addCriterion("salt is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltIsNotNull() {
-            addCriterion("salt is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltEqualTo(String value) {
-            addCriterion("salt =", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltNotEqualTo(String value) {
-            addCriterion("salt <>", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltGreaterThan(String value) {
-            addCriterion("salt >", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltGreaterThanOrEqualTo(String value) {
-            addCriterion("salt >=", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltLessThan(String value) {
-            addCriterion("salt <", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltLessThanOrEqualTo(String value) {
-            addCriterion("salt <=", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltLike(String value) {
-            addCriterion("salt like", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltNotLike(String value) {
-            addCriterion("salt not like", value, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltIn(List<String> values) {
-            addCriterion("salt in", values, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltNotIn(List<String> values) {
-            addCriterion("salt not in", values, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltBetween(String value1, String value2) {
-            addCriterion("salt between", value1, value2, "salt");
-            return (Criteria) this;
-        }
-
-        public Criteria andSaltNotBetween(String value1, String value2) {
-            addCriterion("salt not between", value1, value2, "salt");
+        public Criteria andDesc_NotBetween(String value1, String value2) {
+            addCriterion("desc_ not between", value1, value2, "desc_");
             return (Criteria) this;
         }
     }

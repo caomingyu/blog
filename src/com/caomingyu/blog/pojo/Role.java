@@ -1,20 +1,11 @@
 package com.caomingyu.blog.pojo;
 
-import java.util.List;
-
-public class Category {
+public class Role {
     private Integer id;
-    private List<Article> articles;
-
-    public List<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
-    }
 
     private String name;
+
+    private String desc_;
 
     public Integer getId() {
         return id;
@@ -30,5 +21,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public String getDesc_() {
+        return desc_;
+    }
+
+    public void setDesc_(String desc_) {
+        this.desc_ = desc_ == null ? null : desc_.trim();
     }
 }
