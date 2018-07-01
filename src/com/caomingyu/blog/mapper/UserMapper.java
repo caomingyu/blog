@@ -1,5 +1,6 @@
 package com.caomingyu.blog.mapper;
 
+import com.caomingyu.blog.pojo.Role;
 import com.caomingyu.blog.pojo.User;
 import com.caomingyu.blog.pojo.UserExample;
 import java.util.List;
@@ -18,4 +19,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<Role> list(int uid);
 }

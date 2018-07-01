@@ -9,9 +9,9 @@
     <table class="table">
         <thead>
         <th>ID</th>
-        <th>Name</th>
-        <th>Password</th>
-        <th>用户类型</th>
+        <th>姓名</th>
+        <th>密码(加密)</th>
+        <th>用户角色</th>
         </thead>
         <tbody>
         <c:forEach items="${us}" var="u" varStatus="st">
@@ -19,8 +19,11 @@
                 <td>${u.id}</td>
                 <td>${u.name}</td>
                 <td>${u.password}</td>
-                <td><c:if test="${u.isadministrator ==true }">管理员</c:if>
-                    <c:if test="${u.isadministrator ==false }">普通用户</c:if></td>
+                <td>
+                    <c:forEach items="${u.roles}" var="r">
+                        ${r.desc_}
+                    </c:forEach>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

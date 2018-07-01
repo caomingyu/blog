@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface UserService {
     List<User> list();
-
+    User getByName(String name);
     User get(int id);
 }
