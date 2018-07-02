@@ -15,7 +15,10 @@
     </script>
 </head>
 <body>
-<div style="margin-top: 40px">
+<div style="margin:80px 0 auto;" align="center">
+    <span style="font-weight: bolder;color: #2b669a;font-size: larger">文章管理</span>
+</div>
+<div >
     <table class="table table-bordered" style="width: 900px" align="center">
         <thead>
         <th class="success">ID</th>
@@ -41,7 +44,7 @@
                 <td>${a.viewcount}</td>
                 <td><fmt:formatDate value="${a.createdate}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                 <td><a href="admin_article_edit?aid=${a.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a href="admin_article_delete?aid=${a.id}"><span class="glyphicon glyphicon-remove"></span></a>
+                <td><a class="deleteLink" deletelink="true" href="admin_article_delete?aid=${a.id}"><span class="glyphicon glyphicon-remove"></span></a>
             </tr>
         </c:forEach>
         </tbody>

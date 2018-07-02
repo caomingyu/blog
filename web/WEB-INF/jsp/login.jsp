@@ -27,7 +27,7 @@
                     </tr>
                     <tr>
                         <td>用户密码</td>
-                        <td><input type="text" id="password" name="password" class="form-control"></td>
+                        <td><input type="password" id="password" name="password" class="form-control"></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center">

@@ -36,7 +36,7 @@
                 <tr>
                     <td>标题</td>
                     <td><input  type="text" class="form-control" id="title" name="title"></td>
-                    <td><input type="hidden" id="uid" name="uid" value="7"></td>
+                    <td><input type="hidden" id="uid" name="uid""></td>
                 </tr>
                 <tr>
                     <td>关键字</td>

@@ -12,11 +12,15 @@
                 if (!checkEmpty("name","分类名称")) return true;
                 return false;
             });
+
         });
     </script>
 </head>
 <body>
-<div style="margin-top: 40px">
+<div style="margin:80px 0 auto;" align="center">
+    <span style="font-weight: bolder;color: #2b669a;font-size: larger">栏目管理</span>
+</div>
+<div >
     <table class="table table-bordered" style="width: 900px" align="center">
         <thead>
         <th class="success">ID</th>
@@ -32,7 +36,7 @@
                 <td>${c.name}</td>
                 <td><a href="admin_article_list?cid=${c.id}"><span class="glyphicon glyphicon-tasks"></span></a></td>
                 <td><a href="admin_category_edit?cid=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a href="admin_category_delete?cid=${c.id}"><span class="glyphicon glyphicon-remove"></span></a>
+                <td><a class="deleteLink" deletelink="true" href="admin_category_delete?cid=${c.id}"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
             </tr>
         </c:forEach>

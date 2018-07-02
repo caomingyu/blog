@@ -2,17 +2,20 @@ package com.caomingyu.blog.controller;
 
 import com.caomingyu.blog.pojo.Article;
 import com.caomingyu.blog.pojo.Category;
+import com.caomingyu.blog.pojo.User;
 import com.caomingyu.blog.service.ArticleService;
 import com.caomingyu.blog.service.CategoryService;
 import com.caomingyu.blog.service.UserService;
 import com.caomingyu.blog.util.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.security.auth.Subject;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
@@ -61,6 +64,10 @@ public class ArtilcleController {
     }
     @RequestMapping("admin_article_add_")
     public String add_(Article article){
+        org.apache.shiro.subject.Subject subject = SecurityUtils.getSubject();
+        String username = subject.getPrincipal().toString();
+        User u = userService.getByName(username);
+        article.setUid(u.getId());
         article.setCreatedate(new Date());
         articleService.add(article);
         return "redirect:admin_article_list?cid="+article.getCategory_id();

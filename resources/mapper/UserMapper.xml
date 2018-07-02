@@ -118,10 +118,10 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="list" parameterType="_int" resultType="Role">
-    select *
+    select r.*
     from user u
     left join user_role ur on u.id=ur.uid
     left join role r on r.id=ur.rid
-    where u.id=#{0};
+    where uid=#{0};
   </select>
 </mapper>

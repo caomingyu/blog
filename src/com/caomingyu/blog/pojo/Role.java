@@ -1,11 +1,32 @@
 package com.caomingyu.blog.pojo;
 
+import java.util.List;
+import java.util.Set;
+
 public class Role {
     private Integer id;
 
     private String name;
+    private Set<String> permissionName;
+
+    public Set<String> getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(Set<String> permissionName) {
+        this.permissionName = permissionName;
+    }
 
     private String desc_;
+    private List<Permission> permissions;
+
+    public List<Permission> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
+    }
 
     public Integer getId() {
         return id;

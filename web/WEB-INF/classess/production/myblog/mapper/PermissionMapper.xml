@@ -117,4 +117,11 @@
       url = #{url,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="list" resultType="Permission" parameterType="_int">
+    select p.*
+    from permission p
+    left join role_permission rp on p.id=rp.pid
+    left join role r on r.id=rp.id
+    where rp.rid=#{0};
+  </select>
 </mapper>

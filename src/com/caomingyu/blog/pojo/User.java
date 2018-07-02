@@ -1,9 +1,19 @@
 package com.caomingyu.blog.pojo;
 
 import java.util.List;
+import java.util.Set;
 
 public class User {
     private Integer id;
+    private Set<String> permissionnames;
+
+    public Set<String> getPermissionnames() {
+        return permissionnames;
+    }
+
+    public void setPermissionnames(Set<String> permissionnames) {
+        this.permissionnames = permissionnames;
+    }
 
     private String name;
 

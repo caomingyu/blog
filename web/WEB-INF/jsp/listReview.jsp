@@ -48,7 +48,10 @@
         <li class="active">评论列表</li>
     </ul>
 </nav>
-<div style="margin-top: 40px">
+<div style="" align="center">
+    <span style="font-weight: bolder;color: #2b669a;font-size: larger">评论管理</span>
+</div>
+<div >
     <table class="table table-bordered" style="width: 900px" align="center">
         <thead>
         <th class="success">ID</th>
