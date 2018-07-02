@@ -69,4 +69,37 @@ public class UserController {
         }
         return "redirect:admin_user_list";
     }
+    @RequestMapping("admin_user_edit")
+    public String edit(Model model,int uid){
+        User u = userService.get(uid);
+        List<Role> rs = roleService.list();
+        List<Role> hasRole = roleService.list(uid);
+        String s="";
+        for (int i = 0; i <hasRole.size() ; i++) {
+            if (i==hasRole.size()-1){
+                s += hasRole.get(i);
+                continue;
+            }
+            s += hasRole.get(i)+",";
+        }
+        model.addAttribute("rs", rs);
+        model.addAttribute("s", s);
+        model.addAttribute("u", u);
+        return "editUser";
+    }
+
+    @RequestMapping("admin_user_update")
+    public String update(int id,String rid) {
+        if ("".equals(rid)) return "redirect:admin_user_list";
+        String[] s = rid.split(",");
+        userRoleService.delete(id);
+        UserRole userRole = new UserRole();
+        userRole.setUid(id);
+        for (String s1:s
+             ) {
+            userRole.setRid(Integer.valueOf(s1));
+            userRoleService.add(userRole);
+        }
+        return "redirect:admin_user_list";
+    }
 }

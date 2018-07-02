@@ -15,9 +15,9 @@ public class UserRoleServiceImpl implements UserRoleService {
         userRoleMapper.insert(userRole);
     }
 
-    @Override
+    @Override//根据uid,删除User_Role表中的数据
     public void delete(int id) {
-
+        userRoleMapper.deleteByUid(id);
     }
 
     @Override
