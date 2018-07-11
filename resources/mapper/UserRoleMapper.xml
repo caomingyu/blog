@@ -111,4 +111,9 @@
         delete from user_role
         where uid = #{0}
     </delete>
+    <select id="getByRid" parameterType="_int" resultType="UserRole">
+        select *
+        from user_role
+        where rid=#{0};
+    </select>
 </mapper>

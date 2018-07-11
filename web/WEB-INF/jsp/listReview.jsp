@@ -1,35 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@include file="../include/admin/head.jsp" %>
 <%@include file="../include/admin/nav.jsp" %>
-<%--<script>--%>
-<%--$(function () {--%>
-<%--$("#addForm").submit(function () {--%>
-<%--if (checkEmpty("ceshi",,"ceshi")) return false;--%>
-<%--var html = ue.getContent();--%>
-<%--var txt = ue.getContentTxt();--%>
-<%--console.log(html);--%>
-<%--console.log(txt);--%>
-<%--if(html==null||txt==null){--%>
-<%--// $("#container").focus();--%>
-<%--alert("评论内容不能为空");--%>
-<%--return false;--%>
-<%--}--%>
-<%--$("#context_").attr("value",html);--%>
-<%--return false;--%>
-<%--});--%>
-<%--});--%>
-<%--</script>--%>
 <html>
 <script>
     $(function () {
         $("form.addForm").submit(function () {
             var html = ue.getContent();
             var txt = ue.getContentTxt();
-            // if (html == null || txt == null) {
-            //     $("#container").focus();
-            //     alert("评论内容不能为空");
-            //     return false;
-            // }
             $("#context_").attr("value", html);
             var value = $("#context_").val();
             if (checkEmpty("context_","评论内容")) return false;
@@ -59,15 +36,21 @@
         <th class="success">评论发布者</th>
         <th class="success">评论内容</th>
         <th class="success">发表时间</th>
+        <th class="success">编辑</th>
+        <th class="success">删除</th>
         </thead>
         <tbody>
         <c:forEach items="${rs}" var="r" varStatus="st">
             <tr>
                 <td>${r.id}</td>
-                <td>${a.title}</td>
                 <td>${u.name}</td>
+                <td>${r.user.name}</td>
                 <td><a href="admin_review_context?rid=${r.id}"><span class="glyphicon glyphicon-book"></span></a></td>
                 <td><fmt:formatDate value="${r.createdate}" pattern="YYYY-MM-dd HH:mm:ss"></fmt:formatDate>
+                </td>
+                <td><a href="/admin_review_edit?rid=${r.id}"><span class="glyphicon glyphicon-edit"></span></a>
+                </td>
+                <td><a class="deleteLink" deletelink="true" href="/admin_review_delete?rid=${r.id}"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
             </tr>
         </c:forEach>

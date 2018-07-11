@@ -31,6 +31,5 @@
 
 </script>
 
-<input type="button" value="测试" name="ceshi" onClick="test();"/>
 </body>
 </html>

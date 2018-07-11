@@ -20,4 +20,6 @@ public interface UserRoleMapper {
     int updateByPrimaryKey(UserRole record);
 
     void deleteByUid(int uid);
+
+    List<UserRole> getByRid(int rid);
 }

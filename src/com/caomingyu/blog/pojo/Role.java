@@ -5,6 +5,15 @@ import java.util.Set;
 
 public class Role {
     private Integer id;
+    private boolean hasintroduced;
+
+    public boolean isHasintroduced() {
+        return hasintroduced;
+    }
+
+    public void setHasintroduced(boolean hasintroduced) {
+        this.hasintroduced = hasintroduced;
+    }
 
     private String name;
     private Set<String> permissionName;

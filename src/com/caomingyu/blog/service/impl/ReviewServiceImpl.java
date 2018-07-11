@@ -19,12 +19,12 @@ public class ReviewServiceImpl implements ReviewService {
     ReplyService replyService;
     @Override
     public void add(Review review) {
-
+        reviewMapper.insert(review);
     }
 
     @Override
     public void delete(int id) {
-
+        reviewMapper.deleteByPrimaryKey(id);
     }
 
     @Override

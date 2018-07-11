@@ -1,5 +1,6 @@
 package com.caomingyu.blog.controller;
 
+import com.caomingyu.blog.pojo.Article;
 import com.caomingyu.blog.pojo.Category;
 import com.caomingyu.blog.service.ArticleService;
 import com.caomingyu.blog.service.CategoryService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -54,5 +56,12 @@ public class CategoryController {
     public String update(Category category){
         categoryService.update(category);
         return "redirect:admin_category_list";
+    }
+    @RequestMapping("admin_category_checkDelete")
+    @ResponseBody
+    public String check(String cid){
+        List<Article> as = articleService.list(Integer.valueOf(cid));
+        if (as.size()==0) return "success";
+        return "unsuccess";
     }
 }

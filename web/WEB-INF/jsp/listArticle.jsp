@@ -15,6 +15,10 @@
     </script>
 </head>
 <body>
+<nav class="breadcrumb">
+        <li><a href="/admin_category_list">${c.name}</a></li>
+        <li class="active">文章管理</li>
+</nav>
 <div style="margin:80px 0 auto;" align="center">
     <span style="font-weight: bolder;color: #2b669a;font-size: larger">文章管理</span>
 </div>

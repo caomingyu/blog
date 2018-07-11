@@ -13,5 +13,6 @@ public interface UserRoleService {
 
     UserRole get(int id);
 
-//    List<UserRole> list();
+    //    List<UserRole> list();
+    List<UserRole> getByRid(int rid);
 }

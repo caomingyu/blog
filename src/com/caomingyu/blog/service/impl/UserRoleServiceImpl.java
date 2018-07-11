@@ -6,6 +6,8 @@ import com.caomingyu.blog.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
@@ -22,11 +24,16 @@ public class UserRoleServiceImpl implements UserRoleService {
 
     @Override
     public void update(UserRole userRole) {
-
+        userRoleMapper.updateByPrimaryKey(userRole);
     }
 
     @Override
     public UserRole get(int id) {
         return null;
+    }
+
+    @Override
+    public List<UserRole> getByRid(int rid) {
+        return userRoleMapper.getByRid(rid);
     }
 }

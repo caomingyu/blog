@@ -74,6 +74,21 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public void add(Role role) {
+        roleMapper.insert(role);
+    }
+
+    @Override
+    public Role get(String name) {
+        return roleMapper.get(name);
+    }
+
+    @Override
+    public void delete(int rid) {
+        roleMapper.deleteByPrimaryKey(rid);
+    }
+
+    @Override
     public Set<String> listRoles(String userName) {
 
         return null;

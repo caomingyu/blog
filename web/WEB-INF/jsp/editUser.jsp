@@ -3,13 +3,9 @@
 <%@include file="../include/admin/nav.jsp" %>
 <script>
     $(function () {
-        var value=$("#hasrole").val()
-        var ss=value.split(',')
-            console.log(ss)
-        $("select.selectpicker").find("option[value=ss]").attr("selected",true);
-        <%--for (var i=0;i<${a.size()}) --%>
         $("form.editForm").submit(function () {
             var value = $("select.selectpicker").selectpicker('val');
+            console.log(value)
             // if (value==null){
             //     alert("角色设置不能为空")
             //     $("select.selectpicker").focus();
@@ -18,7 +14,7 @@
             console.log(value)
             $("#rid").attr("value", value);
             console.log($("#rid").val())
-            return false;
+            return true;
         });
 
     });
@@ -43,7 +39,7 @@
                         <select class="selectpicker" multiple
                                 data-actions-box="true" data-none-Selected-Text="请选择角色" data-live-search="true">
                             <c:forEach items="${rs}" var="r">
-                            <option  value="${r.id}">${r.desc_}</option>
+                            <option <c:if test="${r.hasintroduced}">selected="selected"</c:if>  value="${r.id}">${r.desc_}</option>
                             </c:forEach>
                         </select>
                         <input type="hidden" id="rid" name="rid" value="">

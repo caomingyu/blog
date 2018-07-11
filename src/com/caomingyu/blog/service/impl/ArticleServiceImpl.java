@@ -3,6 +3,7 @@ package com.caomingyu.blog.service.impl;
 import com.caomingyu.blog.mapper.ArticleMapper;
 import com.caomingyu.blog.pojo.Article;
 import com.caomingyu.blog.pojo.ArticleExample;
+import com.caomingyu.blog.pojo.User;
 import com.caomingyu.blog.service.ArticleService;
 import com.caomingyu.blog.service.UserService;
 import com.caomingyu.blog.util.GetImageSrc;
@@ -33,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
         String html = a.getContext_();
         List<String> imgs = GetImageSrc.getImageSrc(html);
         List<String> ss = new ArrayList<>();
-        if (null != imgs&&0!=imgs.size()) {
+        if (null != imgs && 0 != imgs.size()) {
             for (String s : imgs
                     ) {
                 ss.add(s.substring(21, s.length()));
@@ -70,7 +71,13 @@ public class ArticleServiceImpl implements ArticleService {
         List<Article> articles = articleMapper.selectByExample(example);
         for (Article a : articles
                 ) {
-            a.setUser(userService.get(a.getUid()));
+            User u=new User();
+            if (a.getUid() == null) {
+                u.setName("佚名");
+            }else {
+                u = userService.get(a.getUid());
+            }
+            a.setUser(u);
         }
         return articles;
     }

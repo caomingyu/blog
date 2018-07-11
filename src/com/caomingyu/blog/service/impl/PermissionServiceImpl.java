@@ -42,22 +42,22 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public void add(Permission permission) {
-
+        permissionMapper.insert(permission);
     }
 
     @Override
-    public void delete(Long id) {
-
+    public void delete(int id) {
+        permissionMapper.deleteByPrimaryKey(id);
     }
 
     @Override
-    public Permission get(Long id) {
-        return null;
+    public Permission get(int id) {
+        return permissionMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public void update(Permission permission) {
-
+        permissionMapper.updateByPrimaryKeySelective(permission);
     }
 
     @Override
@@ -68,8 +68,8 @@ public class PermissionServiceImpl implements PermissionService {
     @Override
     public boolean needInterceptor(String requestURI) {
         List<Permission> ps = list();
-        for (Permission p:ps
-             ) {
+        for (Permission p : ps
+                ) {
             if (requestURI.equals(p.getUrl())) return true;
         }
         return false;

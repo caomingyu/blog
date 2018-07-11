@@ -26,8 +26,16 @@
          if (value=="true"){
              console.log(111)
              var c = confirm("是否删除");
-             if (c) return true;
-             return false;
+             if (!c) return false;
+         }
+         var cid = $(this).attr('cid');
+         console.log(cid);
+         if (cid!=null){
+             var as = $(this).attr('articles');
+             if (as!=null){
+                 alert("该栏目下存在文章，删除栏目前，需要先将文章删除完");
+                 return false;
+             }
          }
          return true;
      });

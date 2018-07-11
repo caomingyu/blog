@@ -22,7 +22,7 @@ public class URLPathMatchingFilter extends PathMatchingFilter {
     protected boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue)
             throws Exception {
         String requestURI = getPathWithinApplication(request);
- 
+
         System.out.println("requestURI:" + requestURI);
  
         Subject subject = SecurityUtils.getSubject();

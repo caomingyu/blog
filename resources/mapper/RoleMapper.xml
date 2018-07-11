@@ -104,4 +104,10 @@
       desc_ = #{desc_,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="get" parameterType="string" resultType="Role">
+    select *
+    from role
+    where name=#{0};
+  </select>
 </mapper>

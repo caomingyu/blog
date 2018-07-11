@@ -104,4 +104,14 @@
       pid = #{pid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <delete id="delete" parameterType="_int">
+    delete from role_permission
+    where rid = #{0};
+
+  </delete>
+  <delete id="deleteByPid" parameterType="_int">
+    delete from role_permission
+    where rid = #{0};
+
+  </delete>
 </mapper>

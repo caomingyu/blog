@@ -49,7 +49,13 @@ public class ArtilcleController {
     @RequestMapping("admin_article_context")
     public String show(Model model,int aid){
         Article a = articleService.get(aid);
-        a.setUser(userService.get(a.getUid()));
+        User u = new User();
+        if (a.getUid()==null){
+            u.setName("佚名");
+        }else {
+            u = userService.get(a.getUid());
+        }
+        a.setUser(u);
         a.setCategory(categoryService.get(a.getCategory_id()));
         Category c = categoryService.get(a.getCategory_id());
         model.addAttribute("a", a);

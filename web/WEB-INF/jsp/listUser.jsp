@@ -20,6 +20,7 @@
         //     $("span.permissiondesc").text("");
         //     $("span.show").text('拥有所有权限')
         // }
+
     });
 </script>
 <html>
@@ -36,7 +37,7 @@
         <th class="success">ID</th>
         <th class="success">姓名</th>
         <th class="success">密码(加密)</th>
-        <th class="success">用户角色</th>
+        <th width="80px" class="success">用户角色</th>
         <th class="success">拥有的权限</th>
         <th width="40px" class="success">编辑</th>
         <th width="40px" class="success">删除</th>
@@ -57,9 +58,9 @@
                         <span class="permissiondesc" style="display: inline-block">${s}</span>
                     </c:forEach>
                 </td>
-                <td><a class="deleteLink" detelink="true" href="admin_user_edit?uid=${u.id}"><span
+                <td><a href="admin_user_edit?uid=${u.id}"><span
                         class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a class="deleteLink" detelink="true" href="admin_user_delete?uid=${u.id}"><span
+                <td><a class="deleteLink" deletelink="true" href="admin_user_delete?uid=${u.id}"><span
                         class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
@@ -81,13 +82,13 @@
                 </tr>
                 <tr>
                     <td>密码：</td>
-                    <td><input class="form-control" id="password" name="password" type="text"></td>
+                    <td><input class="form-control" id="password" name="password" type="password"></td>
                 </tr>
                 <tr>
                     <td>设置角色：</td>
                     <td>
                         <select id="selectroles" class="selectpicker" multiple data-actions-box="true"
-                                data-none-Selected-Text="请选择角色" data-live-search="true">
+                                data-none-Selected-Text="请选择角色" data-live-search="true" data-size="4">
                             <c:forEach items="${roles}" var="r">
                                 <option rid="${r.id}" name="role" value="${r.id}">${r.desc_}</option>
                             </c:forEach>

@@ -14,6 +14,30 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/classes/applicationContext-shiro.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/classess/production/myblog/applicationContext-shiro.xml</file>
+          <file>file://$MODULE_DIR$/resources/applicationContext-shiro.xml</file>
+          <file>file://$MODULE_DIR$/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/classes/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/classess/production/myblog/springMVC.xml</file>
+          <file>file://$MODULE_DIR$/resources/springMVC.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/classes/springMVC.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/myblog_war_exploded/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/out/artifacts/myblog_war_exploded" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />

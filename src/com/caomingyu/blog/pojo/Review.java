@@ -6,6 +6,15 @@ import java.util.List;
 public class Review {
     private Integer id;
     private List<Reply> replies;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public List<Reply> getReplies() {
         return replies;

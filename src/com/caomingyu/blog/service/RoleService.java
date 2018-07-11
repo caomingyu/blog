@@ -19,4 +19,10 @@ public interface RoleService {
 //    void setPermission(List<Role> role);
 
     Role get(int id);
+
+    void add(Role role);
+
+    Role get(String name);
+
+    void delete(int rid);
 }
