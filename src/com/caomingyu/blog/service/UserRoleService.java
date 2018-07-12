@@ -15,4 +15,6 @@ public interface UserRoleService {
 
     //    List<UserRole> list();
     List<UserRole> getByRid(int rid);
+
+    void deleteByRid(int rid);
 }

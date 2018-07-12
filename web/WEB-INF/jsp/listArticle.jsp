@@ -31,7 +31,6 @@
         <th class="success">作者</th>
         <th class="success">内容</th>
         <th class="success">评论</th>
-        <th class="success">浏览量</th>
         <th class="success">创建时间</th>
         <th class="success">编辑</th>
         <th class="success">删除</th>
@@ -45,10 +44,9 @@
                 <td>${a.user.name}</td>
                 <td><a href="admin_article_context?aid=${a.id}"><span class="glyphicon glyphicon-book"></span></a></td>
                 <td><a href="admin_review_list?aid=${a.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
-                <td>${a.viewcount}</td>
                 <td><fmt:formatDate value="${a.createdate}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                 <td><a href="admin_article_edit?aid=${a.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a class="deleteLink" deletelink="true" href="admin_article_delete?aid=${a.id}"><span class="glyphicon glyphicon-remove"></span></a>
+                <td><a class="deleteLink" aid="${a.id}" rs="${a.rs}" deletelink="true" href="admin_article_delete?aid=${a.id}"><span class="glyphicon glyphicon-remove"></span></a>
             </tr>
         </c:forEach>
         </tbody>

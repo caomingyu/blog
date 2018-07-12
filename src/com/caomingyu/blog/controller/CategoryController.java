@@ -30,7 +30,8 @@ public class CategoryController {
         page.setTotal(total);
         for (Category c:cs
              ) {
-            c.setArticles(articleService.list(c.getId()));
+            List<Article> as = articleService.list(c.getId());
+            if (as.size()!=0) c.setArticles(as);
         }
         model.addAttribute("cs", cs);
         model.addAttribute("page", page);

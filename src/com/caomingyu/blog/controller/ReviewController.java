@@ -103,4 +103,14 @@ public class ReviewController {
         model.addAttribute("r", r);
         return "editReview";
     }
+    @RequestMapping("admin_review_update")
+    public String update(int id,String context_){
+        Review review = reviewService.get(id);
+        if (!context_.equals("")){
+            review.setContext_(context_);
+            review.setCreatedate(new Date());
+        }
+        reviewService.update(review);
+        return "redirect:admin_review_list?aid="+review.getArticle_id();
+    }
 }

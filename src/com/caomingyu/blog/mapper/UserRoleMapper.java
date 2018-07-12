@@ -22,4 +22,6 @@ public interface UserRoleMapper {
     void deleteByUid(int uid);
 
     List<UserRole> getByRid(int rid);
+
+    void deleteByRid(int rid);
 }

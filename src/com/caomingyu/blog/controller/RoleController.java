@@ -95,6 +95,7 @@ public class RoleController {
     @RequestMapping("admin_role_delete")
     public String delete(int rid){
         roleService.delete(rid);
+        userRoleService.deleteByRid(rid);
         rolePermissionService.delete(rid);
         Role role = roleService.get("user");
         List<UserRole> urs = userRoleService.getByRid(rid);

@@ -22,4 +22,6 @@ public interface ReviewMapper {
     int updateByPrimaryKeyWithBLOBs(Review record);
 
     int updateByPrimaryKey(Review record);
+
+    void updateByUid(int uid);
 }

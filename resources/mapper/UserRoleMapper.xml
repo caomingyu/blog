@@ -116,4 +116,7 @@
         from user_role
         where rid=#{0};
     </select>
+    <delete id="deleteByRid" parameterType="_int">
+        delete from user_Role where rid=#{0}
+    </delete>
 </mapper>

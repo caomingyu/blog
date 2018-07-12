@@ -156,7 +156,13 @@
     update review
     set uid = #{uid,jdbcType=INTEGER},
       article_id = #{article_id,jdbcType=INTEGER},
+      context_ = #{context_,jdbcType=LONGVARCHAR},
       createdate = #{createdate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByUid" parameterType="_int" >
+    update review
+    set uid = null
+    where uid=#{0};
   </update>
 </mapper>

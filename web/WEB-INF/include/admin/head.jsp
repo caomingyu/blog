@@ -29,11 +29,19 @@
              if (!c) return false;
          }
          var cid = $(this).attr('cid');
-         console.log(cid);
+         var aid = $(this).attr('aid');
          if (cid!=null){
-             var as = $(this).attr('articles');
-             if (as!=null){
+             var as = $(this).attr('as');
+             console.log(as)
+             if (as!=""){
                  alert("该栏目下存在文章，删除栏目前，需要先将文章删除完");
+                 return false;
+             }
+         }
+         if (aid != null){
+             var rs=$(this).attr('rs')
+             if (rs!=""){
+                 alert("该文章下存在评论，删除文章前，需要先将评论删除完");
                  return false;
              }
          }

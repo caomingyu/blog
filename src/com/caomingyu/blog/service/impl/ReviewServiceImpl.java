@@ -29,7 +29,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public void update(Review review) {
-
+        reviewMapper.updateByPrimaryKey(review);
     }
 
     @Override
@@ -48,5 +48,18 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public Review get(int id) {
         return reviewMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateByUid(int uid) {
+        reviewMapper.updateByUid(uid);
+    }
+
+    @Override
+    public List<Review> listByUid(int uid) {
+        ReviewExample example = new ReviewExample();
+        example.createCriteria().andUidEqualTo(uid);
+        example.setOrderByClause("id");
+        return reviewMapper.selectByExample(example);
     }
 }

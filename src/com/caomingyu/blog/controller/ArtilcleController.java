@@ -2,9 +2,11 @@ package com.caomingyu.blog.controller;
 
 import com.caomingyu.blog.pojo.Article;
 import com.caomingyu.blog.pojo.Category;
+import com.caomingyu.blog.pojo.Review;
 import com.caomingyu.blog.pojo.User;
 import com.caomingyu.blog.service.ArticleService;
 import com.caomingyu.blog.service.CategoryService;
+import com.caomingyu.blog.service.ReviewService;
 import com.caomingyu.blog.service.UserService;
 import com.caomingyu.blog.util.Page;
 import com.github.pagehelper.PageHelper;
@@ -29,6 +31,8 @@ public class ArtilcleController {
     CategoryService categoryService;
     @Autowired
     UserService userService;
+    @Autowired
+    ReviewService reviewService;
     @RequestMapping("admin_article_list")
     public String list(Model model, Page page, int cid) {
         PageHelper.offsetPage(page.getStart(), page.getCount());
@@ -37,6 +41,8 @@ public class ArtilcleController {
         for (Article a:as
              ) {
             a.setCategory(category);
+            List<Review> rs = reviewService.list(a.getId());
+            if (rs.size()!=0) a.setRs(rs);
         }
         int total = (int) new PageInfo<>(as).getTotal();
         page.setTotal(total);

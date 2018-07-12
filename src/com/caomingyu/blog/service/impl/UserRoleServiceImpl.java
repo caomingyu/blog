@@ -36,4 +36,9 @@ public class UserRoleServiceImpl implements UserRoleService {
     public List<UserRole> getByRid(int rid) {
         return userRoleMapper.getByRid(rid);
     }
+
+    @Override
+    public void deleteByRid(int rid) {
+        userRoleMapper.deleteByRid(rid);
+    }
 }

@@ -1,9 +1,19 @@
 package com.caomingyu.blog.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Article {
     private Integer id;
+    private List<Review> rs;
+
+    public List<Review> getRs() {
+        return rs;
+    }
+
+    public void setRs(List<Review> rs) {
+        this.rs = rs;
+    }
 
     private Integer uid;
 

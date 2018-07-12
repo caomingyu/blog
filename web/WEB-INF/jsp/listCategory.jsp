@@ -36,7 +36,7 @@
                 <td>${c.name}</td>
                 <td><a href="admin_article_list?cid=${c.id}"><span class="glyphicon glyphicon-tasks"></span></a></td>
                 <td><a href="admin_category_edit?cid=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a  class="deleteLink" cid="${c.id}" articles="${c.articles}" deletelink="true" href="admin_category_delete?cid=${c.id}"><span class="glyphicon glyphicon-remove"></span></a>
+                <td><a  class="deleteLink" cid="${c.id}" as="${c.articles}" deletelink="true" href="admin_category_delete?cid=${c.id}"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
             </tr>
         </c:forEach>

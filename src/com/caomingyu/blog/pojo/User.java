@@ -6,6 +6,15 @@ import java.util.Set;
 public class User {
     private Integer id;
     private Set<String> permissionnames;
+    private List<Review> rs;
+
+    public List<Review> getRs() {
+        return rs;
+    }
+
+    public void setRs(List<Review> rs) {
+        this.rs = rs;
+    }
 
     public Set<String> getPermissionnames() {
         return permissionnames;

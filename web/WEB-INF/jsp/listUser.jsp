@@ -60,7 +60,7 @@
                 </td>
                 <td><a href="admin_user_edit?uid=${u.id}"><span
                         class="glyphicon glyphicon-edit"></span></a></td>
-                <td><a class="deleteLink" deletelink="true" href="admin_user_delete?uid=${u.id}"><span
+                <td><a cid="${u.id}" rs="${u.rs}" class="deleteLink" deletelink="true" href="admin_user_delete?uid=${u.id}"><span
                         class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>

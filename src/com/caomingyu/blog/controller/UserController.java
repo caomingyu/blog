@@ -4,6 +4,7 @@ import com.caomingyu.blog.mapper.ArticleMapper;
 import com.caomingyu.blog.pojo.Role;
 import com.caomingyu.blog.pojo.User;
 import com.caomingyu.blog.pojo.UserRole;
+import com.caomingyu.blog.service.ReviewService;
 import com.caomingyu.blog.service.RoleService;
 import com.caomingyu.blog.service.UserRoleService;
 import com.caomingyu.blog.service.UserService;
@@ -33,6 +34,8 @@ public class UserController {
     UserRoleService userRoleService;
     @Autowired
     ArticleMapper articleMapper;
+    @Autowired
+    ReviewService reviewService;
     @RequestMapping("admin_user_list")
     public String list(Model model, Page page) {
         PageHelper.offsetPage(page.getStart(), page.getCount());
@@ -43,6 +46,7 @@ public class UserController {
             for (User u : us
                     ) {
                 u.setRoles(roleService.list(u.getId()));
+                u.setRs(reviewService.listByUid(u.getId()));
                 Set<String> names = new HashSet<>();
                 if (null != u.getRoles()) names = roleService.permissionName(u.getRoles());
                 u.setPermissionnames(names);
@@ -113,6 +117,8 @@ public class UserController {
     public String delete(int uid) {
         userService.delete(uid);
         articleMapper.update(uid);
+        reviewService.updateByUid(uid);
+        userRoleService.delete(uid);
         return "redirect:admin_user_list";
     }
 }

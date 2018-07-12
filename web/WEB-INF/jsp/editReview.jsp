@@ -2,6 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../include/admin/head.jsp"%>
 <%@include file="../include/admin/nav.jsp"%>
+<script>
+    $(function () {
+       $("form.editForm").submit(function () {
+           var html = ue.getContent();
+           console.log(html)
+           $("#context_").attr('value', html);
+           return true;
+       }) ;
+    });
+</script>
 <html>
 <head>
     <title>编辑回复</title>
@@ -18,10 +28,12 @@
                         <script id="container" name="container" type="text/plain">${r.context_}</script>
                         <input type="hidden" id="context_" name="context_" value="">
                         <%@include file="../include/admin/ueditor.jsp"%>
+                        <input type="hidden" name="id" value="${r.id}">
                     </td>
+
                 </tr>
                 <tr>
-                    <td><input type="submit" value="提交" class="btn-success"></td>
+                    <td colspan="2" align="center"><input type="submit" value="提交" class="btn-success"></td>
                 </tr>
             </table>
         </form>

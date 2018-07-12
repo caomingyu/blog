@@ -19,12 +19,9 @@
     </ul>
 </nav>
 <body>
-<%--<div style="margin:60px auto">--%>
-<%--<script id="container" name="content" type="text/plain">${a.context_}</script>--%>
-<%--<%@include file="../include/admin/ueditor.jsp"%>--%>
-<%--</div>--%>
 
-<div style="margin:30px auto">
+
+<div style="margin:40px  auto;margin-left: 160px;margin-right: 160px">
     <c:if test="${r==null}">${a.context_}</c:if>
     <c:if test="${r!=null}">${r.context_}</c:if>
 </div>

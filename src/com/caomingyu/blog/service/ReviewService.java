@@ -14,4 +14,8 @@ public interface ReviewService {
     List<Review> list(int aid);
 
     Review get(int id);
+
+    void updateByUid(int uid);
+
+    List<Review> listByUid(int uid);
 }
