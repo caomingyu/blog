@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="blog">
+    <output-path>$PROJECT_DIR$/web/WEB-INF/classess/artifacts/blog</output-path>
+    <root id="archive" name="blog.war">
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>

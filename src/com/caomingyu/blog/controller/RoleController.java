@@ -79,7 +79,7 @@ public class RoleController {
     }
     @RequestMapping("admin_role_add")
     public String add(Role role,String name,String selectid){
-        if ("".equals(selectid)) return "redirect:admin_role_list";
+//        if ("".equals(selectid)) return "redirect:admin_role_list";
         roleService.add(role);
         Role r = roleService.get(name);
         String[] s = selectid.split(",");

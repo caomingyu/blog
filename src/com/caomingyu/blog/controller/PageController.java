@@ -1,6 +1,8 @@
 package com.caomingyu.blog.controller;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,8 @@ import javax.servlet.http.HttpSession;
 public class PageController {
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login(HttpSession session, Model model) {
-        if (null != session.getAttribute("subject")) {
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated()) {
             model.addAttribute("subject", session.getAttribute("subject"));
             return "hasLogin";
         }
